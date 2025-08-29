@@ -13,7 +13,7 @@ DB_USER = os.getenv("DATABASE_USER")
 DB_PASSWORD = os.getenv("DATABASE_PASSWORD")
 
 SQLACHEMY_DATABASE_URL = (
-    f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    f"postgresql://postgres:kj0910@localhost:5432/CoastAlert"
 )
 
 engine = create_engine(SQLACHEMY_DATABASE_URL)
@@ -28,5 +28,3 @@ def get_db():
         yield db
     finally:
         db.close()
-
-
